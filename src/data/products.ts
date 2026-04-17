@@ -17,7 +17,7 @@ export const products: Product[] = [
     id: "1",
     title: "Xiaomi Smart Band 9 Active",
     price: "369.000",
-    image: "/produtimage/xiaomiwatch.png",
+    image: "https://dynamic.zacdn.com/oPl1guuIrnEoU-6E3SDj0Waw9dI=/filters:quality(70):format(webp)/https://static-id.zacdn.com/p/xiaomi-watch-8869-5638615-6.jpg",
     rating: 4.9,
     reviewCount: "11.8k",
     reviewExcerpt: "Berfungsi dengan baik, mantap, sangat affordable dan enjoy. Sangat membantu untuk berprogress everyday. jalan kaki menjadi lebih menyenangkan meskipun capek juga sih. But its okay, I enjoy luv",
