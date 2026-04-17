@@ -4,7 +4,16 @@ import { motion, AnimatePresence } from 'motion/react';
 import { products, Product } from './data/products';
 import { GoogleGenAI } from '@google/genai';
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+let aiInstance: GoogleGenAI | null = null;
+const getAI = () => {
+  if (!aiInstance) {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (apiKey && apiKey !== "undefined" && apiKey !== '""') {
+      aiInstance = new GoogleGenAI({ apiKey });
+    }
+  }
+  return aiInstance;
+};
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -34,6 +43,13 @@ export default function App() {
 Here are the products currently available in the shop:
 ${JSON.stringify(products, null, 2)}
 Your job is to answer user questions about these products, compare them, and help them make purchasing decisions. Always be polite, concise, and reference the specific products in the shop when relevant.`;
+
+      const ai = getAI();
+      if (!ai) {
+        setChatMessages(prev => [...prev, { role: 'assistant', text: "⚠️ Note: The Gemini API Key is missing. Please add the `GEMINI_API_KEY` to your Vercel Project Settings > Environment Variables, then do a new deployment to enable AI features!" }]);
+        setIsChatLoading(false);
+        return;
+      }
 
       // Construct up conversation history (excluding the very first greeting to save tokens if we want, but it's fine to include)
       const formattedHistory = chatMessages.map(msg => `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.text}`).join('\n');
