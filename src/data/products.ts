@@ -47,10 +47,10 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 1,200+,
     reviewExcerpt: "Diluar ekspektasi microphone nya sangat bagus suaranya apalagi dengan settingan tambahan di obs studio mantep banget suaranya. Walaupun di harga 200ribuan tapi memiliki kualitas seperti microphone harga 500 ribuan.",
-    affiliateLink: "#",
+    affiliateLink: "https://s.shopee.co.id/6L1WxlgnEZ",
     store: "Shopee",
     category: "Home",
-    isAvailable: false
+    isAvailable: true
   },
   {
     id: "4",
