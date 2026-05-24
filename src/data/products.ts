@@ -43,7 +43,7 @@ export const products: Product[] = [
     id: "3",
     title: "Vegue M6S",
     price: "250.000",
-    image: "https://s.shopee.co.id/6L1WxlgnEZ",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-8224s-mkbsgnkpcoi07c",
     rating: 4.9,
     reviewCount: 1,200+,
     reviewExcerpt: "Diluar ekspektasi microphone nya sangat bagus suaranya apalagi dengan settingan tambahan di obs studio mantep banget suaranya. Walaupun di harga 200ribuan tapi memiliki kualitas seperti microphone harga 500 ribuan.",
